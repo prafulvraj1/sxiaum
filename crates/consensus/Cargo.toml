@@ -1,0 +1,25 @@
+[package]
+name = "sxiaum-consensus"
+version = "0.1.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+
+[dependencies]
+sxiaum-types = { workspace = true }
+sxiaum-block = { path = "../block" }
+sxiaum-crypto = { path = "../crypto" }
+sxiaum-execution = { workspace = true }
+sxiaum-storage = { workspace = true }
+anyhow = { workspace = true }
+serde = { workspace = true }
+tracing = { workspace = true }
+ed25519-dalek = { workspace = true }
+bincode = { workspace = true }
+primitive-types = { workspace = true }
+sha2 = { workspace = true }
+hex = { workspace = true }
+metrics = { workspace = true }
+
+[dev-dependencies]
+
+

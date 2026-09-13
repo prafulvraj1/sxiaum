@@ -1,0 +1,75 @@
+# cargo-deny configuration (schema v2, cargo-deny >= 0.18)
+# Docs: https://embarkstudios.github.io/cargo-deny/
+
+[advisories]
+version = 2
+db-path = "$CARGO_HOME/cargo-deny-db"
+db-urls = ["https://github.com/rustsec/advisory-db"]
+# Vulnerable dependencies always hard-fail; unmaintained/informational
+# advisories are reported but do not break the build.
+yanked = "deny"
+ignore = [
+    # bincode 1.3.3 is the final release; the team discontinued development
+    # (RUSTSEC-2025-0141). The 1.x API is frozen and complete. Migration to a
+    # maintained codec (bincode 2.x / postcard) is tracked as a separate task;
+    # it changes on-disk and p2p wire formats and must ship in a coordinated fork.
+    "RUSTSEC-2025-0141",
+    # `derivative` is an unmaintained compile-time proc-macro pulled in by
+    # ark-crypto-primitives — required by ark-groth16 at EVERY released
+    # arkworks version including latest 0.6 (RUSTSEC-2024-0388). No patched
+    # upstream exists; it has no runtime or consensus surface.
+    "RUSTSEC-2024-0388",
+    # `paste` is an unmaintained compile-time proc-macro. The arkworks 0.6
+    # upgrade removed it from ark-ff; the remaining copy enters via
+    # netlink-packet-core (libp2p mdns/if-watch) with no patched release
+    # upstream (RUSTSEC-2024-0436). Compile-time codegen only, no runtime
+    # or consensus surface.
+    "RUSTSEC-2024-0436",
+    # hickory-proto fixes live in 0.26.1 but libp2p-dns 0.44 (libp2p 0.56,
+    # current latest) pins ^0.25 (RUSTSEC-2026-0118 / RUSTSEC-2026-0119).
+    # Blocked on a libp2p release that adopts hickory 0.26. Only reachable
+    # through libp2p DNS multiaddr resolution of peer addresses.
+    "RUSTSEC-2026-0118",
+    "RUSTSEC-2026-0119",
+    # spin 0.9.8 was yanked by its author AFTER lazy_static 1.5 (latest) pinned
+    # `spin = "^0.9.8"` as its only allowed range. No non-yanked version exists
+    # in that range and lazy_static has no newer release. Unfixable until
+    # lazy_static ships a new version or dependents drop it.
+    { crate = "spin@0.9.8", reason = "yanked; sole version in lazy_static's pinned range" },
+]
+
+[licenses]
+version = 2
+# Deny-by-default: every dependency license must appear here, which
+# implicitly rejects copyleft licenses (GPL/AGPL) not listed above.
+allow = [
+    "MIT",
+    "Apache-2.0",
+    "Apache-2.0 WITH LLVM-exception",
+    "BSD-2-Clause",
+    "BSD-3-Clause",
+    "ISC",
+    "Unicode-DFS-2016",
+    "Unicode-3.0",
+    "CC0-1.0",
+    "MPL-2.0",
+    "Zlib",
+    "CDLA-Permissive-2.0",
+]
+confidence-threshold = 0.93
+
+[bans]
+multiple-versions = "warn"
+wildcards = "allow"
+highlight = "all"
+workspace-default-features = "allow"
+
+[[bans.deny]]
+# Prefer rustls over openssl to avoid a C dependency and cross-compilation pains.
+name = "openssl"
+
+[sources]
+unknown-registry = "deny"
+unknown-git = "deny"
+allow-registry = ["https://github.com/rust-lang/crates.io-index"]
+allow-git = []

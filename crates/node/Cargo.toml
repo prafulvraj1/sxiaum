@@ -1,0 +1,59 @@
+[package]
+name = "sxiaum-node"
+version = "0.1.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+
+[dependencies]
+sxiaum-types = { workspace = true }
+sxiaum-crypto = { workspace = true }
+sxiaum-storage = { workspace = true }
+sxiaum-networking = { workspace = true }
+sxiaum-mempool = { workspace = true }
+sxiaum-consensus = { workspace = true }
+sxiaum-execution = { workspace = true }
+sxiaum-state = { workspace = true }
+sxiaum-rpc = { workspace = true }
+sxiaum-block = { workspace = true }
+sxiaum-light-client = { workspace = true }
+sxiaum-zk = { workspace = true }
+sxiaum-keystore = { workspace = true }
+anyhow = { workspace = true }
+tokio = { workspace = true }
+tracing = { workspace = true }
+libp2p = { workspace = true }
+ed25519-dalek = { workspace = true }
+rand = { workspace = true }
+bincode = { workspace = true }
+hex = { workspace = true }
+serde_json = { workspace = true }
+serde = { workspace = true }
+figment = { version = "0.10", features = ["toml", "env"] }
+metrics = { workspace = true }
+primitive-types = { workspace = true }
+tracing-subscriber = { workspace = true, features = ["env-filter"] }
+sha2 = { workspace = true }
+zstd = "0.13"
+zeroize = { workspace = true }
+aes-gcm = "0.10"
+pbkdf2 = "0.12"
+hmac = "0.12"
+argon2 = "0.5"
+reqwest = { workspace = true, features = ["blocking", "rustls-tls"] }
+parking_lot = { workspace = true }
+
+[dev-dependencies]
+ed25519-dalek = { workspace = true }
+bincode = { workspace = true }
+tempfile = "3"
+primitive-types = { workspace = true }
+sha3 = { workspace = true }
+
+[[bin]]
+name = "adversarial_devnet_harness"
+path = "src/bin/adversarial_devnet_harness.rs"
+
+[features]
+sp1-sdk = ["sxiaum-zk/sp1-sdk"]
+dev-kzg-srs = ["sxiaum-crypto/dev-kzg-srs"]
+dev-simulated-proofs = ["sxiaum-zk/dev-simulated-proofs"]

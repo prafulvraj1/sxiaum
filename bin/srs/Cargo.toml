@@ -1,0 +1,17 @@
+[package]
+name = "sxiaum-srs"
+version = "0.1.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+
+[dependencies]
+clap = { workspace = true }
+anyhow = { workspace = true }
+hex = { workspace = true }
+sxiaum-crypto = { workspace = true }
+sxiaum-types = { workspace = true }
+sxiaum-zk = { workspace = true }
+sxiaum-keystore = { workspace = true, features = ["vault"] }
+bincode = { workspace = true }
+sha2 = { workspace = true }
+tokio = { workspace = true }

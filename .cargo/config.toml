@@ -1,0 +1,17 @@
+# Workspace-local cargo configuration.
+#
+# Windows (MSVC): since rust-lang/rust#138233 the standard library no longer
+# links `advapi32` implicitly. Transitive build scripts pulled in by the
+# optional `sp1-sdk` feature (vergen -> git2 -> libgit2-sys 0.17) call Win32
+# security/registry APIs that live in advapi32 and therefore fail to link
+# with LNK2019. Explicitly linking the system library here is harmless for
+# all other targets and keeps `--features sp1-sdk` buildable on Windows.
+[build]
+rustflags = ["-C", "codegen-units=1", "-C", "link-arg=advapi32.lib"]
+
+[host]
+rustflags = ["-C", "codegen-units=1", "-C", "link-arg=advapi32.lib"]
+
+[target.x86_64-pc-windows-msvc]
+rustflags = ["-C", "codegen-units=1", "-C", "link-arg=advapi32.lib"]
+

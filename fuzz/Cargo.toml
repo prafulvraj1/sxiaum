@@ -1,0 +1,58 @@
+[package]
+name = "sxiaum-fuzz"
+version = "0.1.0"
+publish = false
+edition = "2021"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+libfuzzer-sys = "0.4"
+sxiaum-consensus = { path = "../crates/consensus" }
+sxiaum-execution = { path = "../crates/execution" }
+sxiaum-mempool = { path = "../crates/mempool" }
+sxiaum-state = { path = "../crates/state" }
+sxiaum-rpc = { path = "../crates/rpc" }
+sxiaum-types = { path = "../crates/types" }
+sxiaum-block = { path = "../crates/block" }
+sxiaum-storage = { path = "../crates/storage" }
+sxiaum-crypto = { path = "../crates/crypto" }
+primitive-types = { version = "0.12", features = ["serde"] }
+bincode = "1.3"
+serde_json = "1.0"
+hex = "0.4"
+
+[workspace]
+members = ["."]
+
+
+[[bin]]
+name = "fuzz_consensus_messages"
+path = "fuzz_targets/fuzz_consensus_messages.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "fuzz_evm_bytecode"
+path = "fuzz_targets/fuzz_evm_bytecode.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "fuzz_mempool_commit_reveal"
+path = "fuzz_targets/fuzz_mempool_commit_reveal.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "fuzz_verkle_state"
+path = "fuzz_targets/fuzz_verkle_state.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "fuzz_rpc_requests"
+path = "fuzz_targets/fuzz_rpc_requests.rs"
+test = false
+doc = false

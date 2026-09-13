@@ -1,0 +1,23 @@
+{
+  "_schema": "sxiaum-bootnodes/v1",
+  "_network": "mainnet",
+  "_comment": "Canonical bootnode registry for SXIAUM mainnet bootstrap discovery.",
+  "network_name": "sxiaum-mainnet",
+  "chain_id": "13689",
+  "bootnodes": [
+    {
+      "id": "boot-1",
+      "region": "global",
+      "multiaddr": "/ip4/127.0.0.1/tcp/9000/p2p/12D3KooWK99VoVxNE7XzyBwXEzW7xhK7Gpv85r9F3V3fyKSUKPH5",
+      "stable": true,
+      "status": "active"
+    },
+    {
+      "id": "boot-2",
+      "region": "global",
+      "multiaddr": "/ip4/127.0.0.1/tcp/9001/p2p/12D3KooWJWoaqZhDaoEFshF7Rh1bpY9ohihFhzcW6d69Lr2NASuq",
+      "stable": true,
+      "status": "active"
+    }
+  ]
+}

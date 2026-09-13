@@ -1,0 +1,42 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  # Primary validator node — metrics served on the dedicated /metrics endpoint.
+  # The RPC port (8080) and the metrics port are the same process; the path
+  # disambiguates from JSON-RPC traffic.
+  - job_name: 'sxiaum-node-0'
+    metrics_path: '/metrics'
+    static_configs:
+      - targets: ['localhost:8080']
+        labels:
+          instance: 'validator-0'
+          network: 'devnet'
+
+  # Additional validator nodes (devnet multi-node setup)
+  - job_name: 'sxiaum-network'
+    metrics_path: '/metrics'
+    static_configs:
+      - targets: ['localhost:8081', 'localhost:8082', 'localhost:8083']
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: instance
+      - source_labels: [__address__]
+        regex: 'localhost:(\d+)'
+        replacement: 'validator-${1}'
+        target_label: validator_id
+
+# ──────────────────────────────────────────────────────────────────────────────
+# MAINNET PRODUCTION NOTE
+# ──────────────────────────────────────────────────────────────────────────────
+# For public mainnet endpoints:
+#   1. Protect /metrics with HTTP Basic Auth via prometheus.yml 'basic_auth' block
+#      or an nginx reverse proxy that restricts the /metrics path to the monitoring
+#      subnet only.
+#   2. Replace localhost targets with your validator hostnames / load-balancer IPs.
+#   3. Add TLS:
+#        scheme: https
+#        tls_config:
+#          ca_file: /etc/prometheus/certs/ca.pem
+#   4. Increase scrape_interval to 30s for mainnet to reduce cardinality pressure.

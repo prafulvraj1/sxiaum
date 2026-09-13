@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "branching_factor": 256,
+  "init_state_hash": "0xf6aae851ac87cfdcfe318317c378cf462ff52c6e6853414e6ac4d91f62be74c8",
+  "contributions": [
+    {
+      "participant_id": "genesis-factory-01",
+      "prev_state_hash": "0xf6aae851ac87cfdcfe318317c378cf462ff52c6e6853414e6ac4d91f62be74c8",
+      "new_state_hash": "0xa68f3f546d96e43c2af6fb1452e2b1d027740ce1d8be216af31588c9465c6e3b",
+      "tau_commitment": "0x954f95e458cfee604f7d82860fa55e2cb60035087d3e684ec7abe3e9d95455d1c1000b30460b4a74465ce1868c65fdb906895326a8c89e03b2bdbf7278763713520963b447621936d7c4e14598464088456cf9e38af446358db5c63b5d75b341",
+      "cumulative_p1": "0xa68a7210d51ec92885bd38208e61ae8e51001a1428c168801a6d7cd093e9793c9ac396ba176c67f33729cc0209e3b855",
+      "challenge": "0xf9e4c054f31c942012cdade55fa264a99aa658d53c198d361c56ac9751ef4777",
+      "attestation": "0xc2e11f5a61c0ec1e4452d66e9d2b34de4f9094ebbb7c85100ab3bd65cb3683cb",
+      "created_at_unix": 1787651386
+    },
+    {
+      "participant_id": "genesis-factory-02",
+      "prev_state_hash": "0xa68f3f546d96e43c2af6fb1452e2b1d027740ce1d8be216af31588c9465c6e3b",
+      "new_state_hash": "0xb734310a3cbd7713be8810df50d47a214a813af2d601f925096c51aa71208b18",
+      "tau_commitment": "0xb5b2a536cfd9763a12cca9315a944d428eddca648a5225f74fbea4d05f00379cd6c639d0c1907f4e7b163dba6c486d890af609a287b0e64f1569cef70cd7480b223c0835e49d9edeff59cbe8397a98b8a21f89908ba8a31719ea168dec012361",
+      "cumulative_p1": "0xb272f0aeb819a0be8c48a58418f5e685c097dacc59392624cf889c59964eb2c58ad321b3454befddeaf371f53d3e1347",
+      "challenge": "0xba0a921da92121af675c491969e9d5a7bbd6d0e03eb5fe8d46c33843a24de06d",
+      "attestation": "0x5e6f43d8e9e58f49de67699d01aa4fcf49034417d9517693c53b183c1e4be671",
+      "created_at_unix": 1787651403
+    },
+    {
+      "participant_id": "genesis-factory-03",
+      "prev_state_hash": "0xb734310a3cbd7713be8810df50d47a214a813af2d601f925096c51aa71208b18",
+      "new_state_hash": "0x60c9171c3d2f5cf17126520084bbfcecab4d6f52ce1fec8b99607651d9453d1d",
+      "tau_commitment": "0xb96f602b148aa1da8db5ef75b4876bbd9f235166cd9459177b71f22f9c15ca74699a9a053341b74415fb71e6685e6440190ab3c346f2201acdd4d2e053ccf5586a19e909e34eabb0054d23f3ddc34fef773eb6df02ea14787539cf9f5944b181",
+      "cumulative_p1": "0x8761a79e2a05d73abaa48b7b649cf5004a58232872ddd88fd191bdfc14465dc6d10235a5bb3e0d122e4bb0005e19d0ce",
+      "challenge": "0x5dcf6c3cf8a00b8265281897613d1b8bcc6e24aae63ab5e6c0581366bcf775d1",
+      "attestation": "0x11a27a2d9910ad299047359d2bd3fdf39aa6292a1aac5a2043f5ad94b355b345",
+      "created_at_unix": 1787651405
+    },
+    {
+      "participant_id": "genesis-factory-04",
+      "prev_state_hash": "0x60c9171c3d2f5cf17126520084bbfcecab4d6f52ce1fec8b99607651d9453d1d",
+      "new_state_hash": "0x1ba9f33eea925fa2448220646092449daceadfc36367fa6472200e28b94cf24d",
+      "tau_commitment": "0x95daac3665c361c9b55105aa4e11284d8c0e707c785daa96bb35c11cea7a2e7bdd44bd9c99b224b303eb5e6fb91b6e45127bbafc2db89097a16690da6e7fe10ec5e9bf90f9a3f99068bf3654c8c83051ec96a9b7ac4966c07d9363a9e0125047",
+      "cumulative_p1": "0xaf4b97afc413372aabaeb319203e2d2315775be537dddf820f1a1bb48179cb2dc2ba2835a5d7b0967924124d8b5239ad",
+      "challenge": "0x679019b247728098ce05c36fcab1366f5a77a3ef1c8032d2a349c1a2d9a01a6d",
+      "attestation": "0x06e0b867f554e074f3eb6d800064b61ff43d8cbb64647d0e43cb1b84e0eb883f",
+      "created_at_unix": 1787651422
+    }
+  ]
+}

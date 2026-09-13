@@ -1,0 +1,103 @@
+{
+    "mode": "validator",
+    "network": "mainnet",
+    "chain_id": "13689",
+    "rpc_addr": "127.0.0.1:8080",
+    "initial_height": 0,
+    "genesis_timestamp": 1712073600,
+    "initial_state_root": "0x86d3088c525a20319bf384306419852650bd77e9e8b96b495ddc5d6e14cbc013",
+    "validators": [
+        {
+            "address": "0x34750f98bd59fcfc946da45aaabe933be154a4b5094e1c4abf42866505f3c97e",
+            "pubkey": "0x8a88e3dd7409f195fd52db2d3cba5d72ca6709bf1d94121bf3748801b40f6f5c",
+            "stake": "1000000000000000000000000",
+            "voting_power": 10000000,
+            "bls_pubkey": "0xa8252b0b09ac1d35ebc41cc01ee2274f0e0beaab4943a64978147cf5e1e909bbda2aa41396451f424dd133ef05908cf3",
+            "bls_pop": "0x8f6fed01bab738c893c4fca62c7f355015fe34ed83309463565a85ff08254ac00f84b48f6c7eee45fb3e4b43a0311df911eb16476d858895c207c49f7ca02e9e956b60edaec70b7a41254b4d3177ffeb7f1844ca9aa4f303b98fcf2ff2786710"
+        },
+        {
+            "address": "0x6a3803d5f059902a1c6dafbc9ba4729212f7caac08634cc3ae76b27529f03827",
+            "pubkey": "0x8139770ea87d175f56a35466c34c7ecccb8d8a91b4ee37a25df60f5b8fc9b394",
+            "stake": "1000000000000000000000000",
+            "voting_power": 10000000,
+            "bls_pubkey": "0x83f8815b4f8113379b66a8362bf5665255b2f43d51297c9a6ef249fa377634342c5c69c25def6e9933c11aff8deb1502",
+            "bls_pop": "0xa656482b67bd09f9482bb3d026f87ef56a2340e6ffb0463970dcf315b4a4eaec8d7f36e23c29bc13ad1cde0267f62146022a73e29ddf24a70e099a663c5f7e0e6cab2b803fa6f5426b13e4875c633ef4ad260d741b98ef1ef582bc839159383d"
+        },
+        {
+            "address": "0xb62e867fa2f33afe62d5d6b1642e1621d543307846b2a57b897e710919b76709",
+            "pubkey": "0xed4928c628d1c2c6eae90338905995612959273a5c63f93636c14614ac8737d1",
+            "stake": "1000000000000000000000000",
+            "voting_power": 10000000,
+            "bls_pubkey": "0x85a4f8ebc906ec822096152611a2c82a949b138d517b1c80d95ffd4ef2d44de31e7e0967f64bc6481b2f3d69e4eb0469",
+            "bls_pop": "0xa8058160ce0f1a78142e9b57053e7101d6e363c20cffe931a839721967adc9e1491bf6cda90b913d1ee2e2f21c8b5a2006523299f0cc34b52b9ef01b176c214d06eb4ba5719f03f29f4ddd009fc45107587a3fbba696cb6199b4b28e9088c7b8"
+        },
+        {
+            "address": "0xc5b940ed3f65c391965de8295fc5d25f474fa57b48d36eb10ad363b8539c1b79",
+            "pubkey": "0xca93ac1705187071d67b83c7ff0efe8108e8ec4530575d7726879333dbdabe7c",
+            "stake": "1000000000000000000000000",
+            "voting_power": 10000000,
+            "bls_pubkey": "0x91e398a50c1c4f592f02998cf3dd07539e7a782c49c1cf013db73958391261270a4cdee99a68f6515e3738e2804fad72",
+            "bls_pop": "0x92cb99342ca18e071e6eaf28f6d60beea40b881a09d36e19ef0aa8c878e569c71abf0b2c111faefe69a3d8a1051669dd06008abe50089296cc957063fc992871881f6c60076494819045b1d988a5fecc997638a5c34a4f8a8658a23d7d13d1e5"
+        }
+    ],
+    "alloc": {
+        "0x34750f98bd59fcfc946da45aaabe933be154a4b5094e1c4abf42866505f3c97e": {
+            "balance": "1000000000000000000000000000"
+        },
+        "0x6a3803d5f059902a1c6dafbc9ba4729212f7caac08634cc3ae76b27529f03827": {
+            "balance": "1000000000000000000000000000"
+        },
+        "0xb62e867fa2f33afe62d5d6b1642e1621d543307846b2a57b897e710919b76709": {
+            "balance": "1000000000000000000000000000"
+        },
+        "0xc5b940ed3f65c391965de8295fc5d25f474fa57b48d36eb10ad363b8539c1b79": {
+            "balance": "1000000000000000000000000000"
+        },
+        "0x000000000000000000000000f86eda0aa257b0fb8222cdf42533202c7be6da83": {
+            "balance": "1000000000000000000000000000"
+        },
+        "0x000000000000000000000000340a79ee9c81df12432b41d433619feed76e4e20": {
+            "balance": "1000000000000000000000000000"
+        }
+    },
+    "protocol": {
+        "max_block_gas": 30000000,
+        "max_tx_size_bytes": 131072,
+        "block_time_ms": 2000,
+        "difficulty_target": "0x00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    },
+    "kzg": {
+        "srs_hash": "0x1ba9f33eea925fa2448220646092449daceadfc36367fa6472200e28b94cf24d",
+        "domain_size": 256,
+        "curve": "bls12-381"
+    },
+    "zk": {
+        "system": "sp1",
+        "vk_hash": "0x008004de2926f1bfbc127896e543fd41e683d132cc357be45b55c2ce2a5254f3",
+        "version": 3
+    },
+    "gas_schedule": {
+        "base_transaction_cost": 21000,
+        "contract_creation_cost": 53000,
+        "verkle_proof_verification": 2500,
+        "state_access_cost": 500,
+        "state_write_cost": 5000,
+        "gas_per_byte": 16
+    },
+    "consensus": {
+        "algorithm": "chained_hotstuff",
+        "quorum_ratio": 0.67,
+        "view_timeout_ms": 5000,
+        "pacemaker_interval_ms": 250,
+        "sharding_enabled": false
+    },
+    "commit_reveal": {
+        "commit_fee": "1000000000000000000",
+        "expiry_blocks": 50,
+        "no_show_slash": 100000000,
+        "reveal_window": 100,
+        "max_commits_per_sender": 16
+    },
+    "validator_key_env": "SXIAUM_VALIDATOR_KEY",
+    "_comment": "Private key via SXIAUM_VALIDATOR_KEY or SXIAUM_VALIDATOR_KEY_1. Never put hex keys in this file."
+}

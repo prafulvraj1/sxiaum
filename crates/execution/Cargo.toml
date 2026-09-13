@@ -1,0 +1,30 @@
+[package]
+name = "sxiaum-execution"
+version = "0.1.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+
+[dependencies]
+sxiaum-types = { workspace = true }
+sxiaum-state = { workspace = true }
+sxiaum-storage = { workspace = true }
+sxiaum-crypto = { workspace = true }
+sxiaum-block = { workspace = true }
+anyhow = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+tracing = { workspace = true }
+rayon = { workspace = true }
+sha2.workspace = true
+bincode.workspace = true
+primitive-types.workspace = true
+revm = { version = "3.5", default-features = false, features = ["std", "serde"] }
+keccak-hash = "0.10"
+hex = { workspace = true }
+parking_lot = { workspace = true }
+
+[dev-dependencies]
+sxiaum-mempool = { workspace = true }
+ed25519-dalek = { workspace = true }
+criterion = "0.5"
+

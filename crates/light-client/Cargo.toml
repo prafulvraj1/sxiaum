@@ -1,0 +1,33 @@
+[package]
+name = "sxiaum-light-client"
+version = "0.1.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+
+[dependencies]
+sxiaum-types = { workspace = true }
+sxiaum-crypto = { workspace = true }
+sxiaum-state = { workspace = true }
+sxiaum-storage = { workspace = true }
+sxiaum-block = { workspace = true }
+sxiaum-zk = { workspace = true }
+sxiaum-networking = { workspace = true }
+anyhow = { workspace = true }
+tracing = { workspace = true }
+tokio = { workspace = true }
+libp2p = { workspace = true }
+hex = { workspace = true }
+thiserror = { workspace = true }
+sha2 = { workspace = true }
+bincode = { workspace = true }
+
+[dev-dependencies]
+ed25519-dalek = { workspace = true }
+primitive-types = { workspace = true }
+# SECURITY (C-14): test-only loopback RPC responder. Under resolver 2 this
+# feature applies only when building light-client tests, never production
+# builds of the library or its consumers.
+sxiaum-networking = { path = "../networking", features = ["test-loopback-rpc"] }
+# Cross-crate known-answer testing: pins the light client's HotStuff vote
+# digest to the canonical construction in the consensus engine.
+sxiaum-consensus = { path = "../consensus" }

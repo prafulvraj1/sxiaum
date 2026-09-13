@@ -1,0 +1,45 @@
+{
+  "title": "SXIAUM Node Dashboard",
+  "templating": {
+    "list": [
+      {
+        "name": "instance",
+        "type": "query",
+        "datasource": "Prometheus",
+        "query": "label_values(sxiaum_node_block_height, instance)",
+        "refresh": 1,
+        "includeAll": true,
+        "multi": true
+      }
+    ]
+  },
+  "panels": [
+    {
+      "type": "stat",
+      "title": "Block Height",
+      "targets": [
+        {
+          "expr": "sxiaum_node_block_height{instance=~\"$instance\"}"
+        }
+      ]
+    },
+    {
+      "type": "timeseries",
+      "title": "TPS",
+      "targets": [
+        {
+          "expr": "rate(sxiaum_node_transactions_processed_total{instance=~\"$instance\"}[1m])"
+        }
+      ]
+    },
+    {
+      "type": "stat",
+      "title": "Connected Peers",
+      "targets": [
+        {
+          "expr": "sxiaum_p2p_connected_peers{instance=~\"$instance\"}"
+        }
+      ]
+    }
+  ]
+}

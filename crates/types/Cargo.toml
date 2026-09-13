@@ -1,0 +1,25 @@
+[package]
+name = "sxiaum-types"
+version = "0.1.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+anyhow = { workspace = true }
+hex = { workspace = true }
+primitive-types = { workspace = true }
+derive_more = { workspace = true }
+sha2 = { workspace = true }
+sha3 = { workspace = true }
+bincode = { workspace = true }
+thiserror = { workspace = true }
+rlp = { workspace = true }
+ed25519-dalek = { workspace = true }
+rand = { workspace = true }
+secp256k1 = { workspace = true }
+
+[dev-dependencies]
+criterion = { workspace = true }
+

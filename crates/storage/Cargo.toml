@@ -1,0 +1,27 @@
+[package]
+name = "sxiaum-storage"
+version = "0.1.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+
+[dependencies]
+redb = { workspace = true }
+sxiaum-block = { workspace = true }
+sxiaum-types = { workspace = true }
+anyhow = { workspace = true }
+bincode = { workspace = true }
+primitive-types = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+tracing = { workspace = true }
+chrono = { workspace = true }
+lru = { workspace = true }
+metrics = { workspace = true }
+parking_lot = { workspace = true }
+thiserror = { workspace = true }
+
+[dev-dependencies]
+criterion = { workspace = true }
+tempfile = "3.10"
+sxiaum-crypto = { workspace = true }
+

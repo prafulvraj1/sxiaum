@@ -1,0 +1,38 @@
+[package]
+name = "sxiaum-networking"
+version = "0.1.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+
+[features]
+# SECURITY (C-14): opt-in test-only loopback RPC responder. Never enable for
+# production binaries; it exists so downstream crates' tests can exercise RPC
+# client flows without a real wire peer (the implicit self-answering behavior
+# removed by C-14).
+test-loopback-rpc = []
+
+[dependencies]
+sxiaum-types = { workspace = true }
+sxiaum-crypto = { workspace = true }
+sxiaum-block = { workspace = true }
+sxiaum-consensus = { workspace = true }
+sxiaum-state = { workspace = true }
+sxiaum-zk = { workspace = true }
+libp2p = { workspace = true }
+anyhow = { workspace = true }
+thiserror = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+bincode = { workspace = true }
+tokio = { workspace = true }
+tracing = { workspace = true }
+futures = { workspace = true }
+async-trait = { workspace = true }
+sha2 = { workspace = true }
+metrics = { workspace = true }
+redb = { workspace = true }
+lru = { workspace = true }
+
+[dev-dependencies]
+primitive-types = { workspace = true }
+ed25519-dalek = { workspace = true }

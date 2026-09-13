@@ -1,0 +1,29 @@
+[package]
+name = "sxiaum-mempool"
+version = "0.1.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+
+[dependencies]
+sxiaum-types = { workspace = true }
+sxiaum-crypto = { workspace = true }
+sxiaum-state = { workspace = true }
+sxiaum-storage = { workspace = true }
+sxiaum-execution = { workspace = true }
+sxiaum-block = { workspace = true }
+sxiaum-networking = { workspace = true }
+anyhow = { workspace = true }
+thiserror = { workspace = true }
+serde = { workspace = true }
+tracing = { workspace = true }
+metrics = { workspace = true }
+rayon = { workspace = true }
+rand = { workspace = true }
+primitive-types = { workspace = true }
+sha2 = { workspace = true }
+hex = { workspace = true }
+parking_lot = { workspace = true }
+lru = { workspace = true }
+
+[dev-dependencies]
+ed25519-dalek = { workspace = true }

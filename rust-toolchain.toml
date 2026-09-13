@@ -1,0 +1,7 @@
+[toolchain]
+# Pinned to 1.91.0 — an installed stable that supports Cargo edition2024
+# (stabilized in 1.85) and that all current workspace dependencies compile
+# cleanly against. Update only after verifying: cargo check --workspace
+channel = "1.91"
+components = ["rustfmt", "clippy"]
+targets = ["x86_64-unknown-linux-gnu"]

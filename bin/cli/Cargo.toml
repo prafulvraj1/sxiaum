@@ -1,0 +1,45 @@
+[package]
+name = "sxiaum-cli"
+version = "0.4.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+
+[dependencies]
+sxiaum-types = { workspace = true }
+sxiaum-crypto = { workspace = true }
+sxiaum-node   = { workspace = true }
+sxiaum-keystore = { workspace = true }
+sxiaum-keytool = { workspace = true }
+
+# CLI framework
+clap    = { workspace = true }
+tokio   = { workspace = true }
+anyhow  = { workspace = true }
+
+# Networking
+# Networking (workspace reqwest uses rustls — no native-tls/OpenSSL)
+reqwest    = { workspace = true }
+serde_json = { workspace = true }
+serde      = { workspace = true }
+
+# Crypto & encoding
+hex             = { workspace = true }
+ed25519-dalek   = "2.1"
+rand            = "0.8"
+primitive-types = { workspace = true }
+
+# Security: encryption primitives (Argon2id + AES-256-GCM) come from sxiaum-keystore
+zeroize   = { version = "1", features = ["derive"] }
+base64    = "0.22"
+rpassword = "7"
+
+# Node telemetry
+tracing            = { workspace = true }
+tracing-subscriber = { workspace = true }
+
+# UI
+colored   = "2.0"
+indicatif = "0.18"
+comfy-table = "7.1"
+chrono    = { version = "0.4", features = ["serde"] }
+directories = "5.0"

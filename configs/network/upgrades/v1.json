@@ -1,0 +1,11 @@
+{
+    "upgrade_name": "v1_alpha_fix",
+    "activation_height": 1000000,
+    "changes": [
+        "Enable Sharding for Validator Group B",
+        "Update base_gas_cost for Verkle proofs",
+        "Enable HotStuff Pipelining"
+    ],
+    "voting_window_blocks": 50000,
+    "quorum_threshold_percent": 67
+}

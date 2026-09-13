@@ -1,0 +1,14 @@
+{
+  "_schema": "sxiaum-bootnodes/v1",
+  "_network": "template",
+  "_comment": "Bootstrap node registry template for local cluster and devnet deployments.",
+  "bootnodes": [
+    {
+      "id": "boot-1",
+      "region": "local",
+      "multiaddr": "/ip4/127.0.0.1/tcp/9000/p2p/12D3KooWK99VoVxNE7XzyBwXEzW7xhK7Gpv85r9F3V3fyKSUKPH5",
+      "stable": true,
+      "status": "active"
+    }
+  ]
+}

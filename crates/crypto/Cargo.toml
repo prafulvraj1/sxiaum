@@ -1,0 +1,44 @@
+[package]
+name = "sxiaum-crypto"
+version = "0.1.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+
+[dependencies]
+tracing = { workspace = true }
+ed25519-dalek = { workspace = true, features = ["rand_core"] }
+ark-bls12-381 = { workspace = true }
+ark-ec = { workspace = true }
+ark-ff = { workspace = true }
+anyhow = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+hex = { workspace = true }
+rand = { workspace = true }
+bincode = { workspace = true }
+sha2 = { workspace = true }
+sxiaum-types = { path = "../types" }
+rayon = { workspace = true }
+ark-serialize.workspace = true
+zeroize = { workspace = true }
+# Remote signer (HSM / Web3Signer) support — opt-in only.
+reqwest = { workspace = true, features = ["json", "rustls-tls"], optional = true }
+tokio = { workspace = true, optional = true }
+
+[[bin]]
+name = "generate_srs"
+path = "src/bin/generate_srs.rs"
+
+[features]
+default = []
+# Development-only in-memory SRS with public trapdoor tau=42.
+# FORBIDDEN in release builds (compile_error in kzg.rs). Never enable on mainnet binaries.
+dev-kzg-srs = []
+
+# Fuzz target entry points for use with cargo-fuzz or external harnesses.
+# Not enabled in production builds.
+fuzz-targets = []
+
+# Remote signer (HSM / Web3Signer) client. Enable only on binaries that
+# delegate Ed25519 signing to an external signing service.
+remote-signer = ["dep:reqwest", "dep:tokio"]

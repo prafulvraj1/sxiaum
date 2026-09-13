@@ -1,0 +1,23 @@
+[package]
+name = "sxiaum-node-bin"
+version = "0.1.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+
+[[bin]]
+name = "sxiaum"
+path = "src/main.rs"
+
+[dependencies]
+sxiaum-node = { path = "../../crates/node" }
+sxiaum-rpc = { path = "../../crates/rpc" }
+tokio = { workspace = true }
+serde = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+anyhow = { workspace = true }
+clap = { workspace = true }
+
+[features]
+sp1-sdk = ["sxiaum-node/sp1-sdk"]
+dev = ["sxiaum-node/dev-kzg-srs", "sxiaum-node/dev-simulated-proofs"]
